@@ -1,0 +1,133 @@
+@import './reset.scss';
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 30px 20px 20px;
+}
+
+/* 弹层样式设置
+  .el-dialog__title 标题
+  .el-dialog__headerbtn 关闭按钮
+ */
+.el-dialog{
+  .el-dialog__header{
+    border-bottom: 1px solid #ddd;
+    padding: 15px 20px 15px;
+  }
+  .el-dialog__title{
+    font-size: 16px;
+    line-height: 1;
+  }
+  .el-dialog__headerbtn{
+    font-size: 24px;
+    top: 14px;
+  }
+}
+/* 设置表单元素 */
+.el-form{
+  /* 自定义校验 el-form-item 前添加 * 号 */
+  .el-form-item.custom-prop{
+    /deep/ .el-form-item__label:before{
+      content: '*';
+      color: #ff4949;
+      margin-right: 4px;
+    }
+  }
+  /deep/ .el-form-item__label, /deep/ .el-form-item__content, /deep/ .el-radio{
+    font-weight: normal;
+  }
+  /deep/ .el-form-item__content{
+    .el-select {
+      width: 100%;
+    }
+    .el-date-editor.el-range-editor {
+      width: 400px;
+      /deep/ .el-range-input{
+        width: 80%;
+      }
+    }
+    .el-cascader{
+      width: 100%;
+    }
+  }
+}
+
+/* 按钮样式 */
+.el-button{
+  &.el-button--small{
+    font-size: 14px;
+  }
+}
+
+/* 搜索按钮靠右 */
+.el-form .btn-wrap.el-form-item {
+  display: block;
+  margin: 20px 20px 20px 0 ;
+  text-align: right;
+}
+
+/* 分页按钮靠右 */
+.el-pagination{
+  text-align: right;
+  margin-top: 20px;
+}
